@@ -1,5 +1,5 @@
 <template>
     <div>
-        About Error 화면 입니다.
+        Posting Words 화면 입니다.
     </div>
 </template>
