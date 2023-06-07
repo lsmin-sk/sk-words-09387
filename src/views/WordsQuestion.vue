@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-5">
-        <h3 id="overview">질문 목록</h3>
+        <h3 id="overview">설문 목록</h3>
         <table class="table table-hover">
             <thead>
                 <tr>
