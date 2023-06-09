@@ -8,7 +8,8 @@
             <label for="messageInput" class="form-label">메시지</label>
             <input type="text" class="form-control" id="messageInput" v-model="modalMessage">
         </div>
-        <button @click="openModal" class="btn btn-primary me-2">팝업창</button>
+        <button @click="openModal" class="btn btn-primary">팝업창</button>
+        <hr>
         <MessagePopup />
     </div>
 </template>
