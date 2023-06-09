@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AboutRoot from '../views/AboutRoot.vue';
 import AboutError from '../views/AboutError.vue';
+import AboutTest from '../views/AboutTest.vue';
 import AdminLogin from '../views/AdminLogin.vue';
 import AdminSignup from '../views/AdminSignup.vue';
 import PostingWords from '../views/PostingWords.vue';
@@ -19,6 +20,11 @@ const router = createRouter({
       path: '/errors',
       name: '/errors',
       component: AboutError
+    },
+    {
+      path: '/test',
+      name: '/test',
+      component: AboutTest
     },
     {
       path: '/admin/login',
