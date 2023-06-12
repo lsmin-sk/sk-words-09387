@@ -10,7 +10,7 @@
         </div>
         <button @click="openModal" class="btn btn-primary">팝업창</button>
         <hr>
-        <MessagePopup />
+        <MessagePopup ref="MessagePopup" />
     </div>
 </template>
   
@@ -29,7 +29,7 @@ export default {
     },
     methods: {
         openModal() {
-            console.log('openModal');
+            this.$refs.MessagePopup.show();
         },
     },
 };

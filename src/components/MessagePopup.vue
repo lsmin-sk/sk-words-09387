@@ -1,11 +1,12 @@
 <template>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button v-show="false" type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="component.target"
+        :ref="component.id">
         Launch demo modal
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" :id="component.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -23,3 +24,22 @@
         </div>
     </div>
 </template>
+
+<script>
+const COMPONENT = "MessagePopup-" + Math.floor(Math.random() * 1000);
+export default {
+    data() {
+        return {
+            component: {
+                id: COMPONENT,
+                target: "#" + COMPONENT,
+            },
+        };
+    },
+    methods: {
+        show() {
+            this.$refs[this.component.id].click();
+        },
+    },
+};
+</script>
