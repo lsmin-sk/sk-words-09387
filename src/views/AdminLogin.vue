@@ -12,7 +12,7 @@
       </div>
       <button type="submit" class="btn btn-primary" @click.prevent="submitForm">Submit</button>
     </form>
-    <p>계정이 없으신가요? <a href="#">회원가입</a></p>
+    <p>계정이 없으신가요? <a href="/admin/signup">회원가입</a></p>
   </div>
 </template>
 
