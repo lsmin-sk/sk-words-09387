@@ -28,6 +28,8 @@
   
   <script>
   import firebaseAuth from '@/states/firebase-auth';
+  import firebaseDb from '@/states/firebase-db';
+
   export default {
     data() {
       return {
@@ -44,7 +46,20 @@
         firebaseAuth.signUp(this.admin, this.onSuccess, this.onError);
       },
       onSuccess(user) {
-        console.log('onSuccess:', user);
+        // this.admin의 password 보이지 않도록 객체 새로 생성
+        const admin = {
+          id: user.uid,
+          name: this.admin.name,
+          email: this.admin.email
+        }
+        firebaseDb.postAdmin(admin, (error)=> {
+          if(error === null) { // 로그인 페이지로 이동
+            this.$router.push("/admin/login");
+          }
+          else {
+            console.log('회원가입 실패 error=' + error);
+          }
+        });
       },
       onError(error) {
         console.log('onError:', error);
